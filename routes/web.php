@@ -23,6 +23,7 @@ Route::middleware("auth")->group(function () {
     Route::get('/profile', [UserController::class, "index"])->name("profile");
     Route::get('/playlist/{id}', [PlaylistController::class, "show"])->name("playlist.show");
     Route::post('/musicplaylist', [MusicPlaylistController::class, "store"])->name("musicplaylist.store");
+    Route::post('/musicplaylist/delete', [MusicPlaylistController::class, "destroy"])->name("musicplaylist.destroy");
 });
 
 Auth::routes();

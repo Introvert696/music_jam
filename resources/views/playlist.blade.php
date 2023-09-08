@@ -31,9 +31,11 @@
                         <div class="title">{{ $item['title'] }} </div>
                         @auth
                             <div class="btn right-0">
-                                <form action="{{ route('musicplaylist.store') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('musicplaylist.destroy') }}" method="post"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" name="music_id" value="{{ $item['id'] }}">
+                                    <input type="hidden" name="playlist_id" value="{{ $playlist['id'] }}">
                                     <button type="submit" class="btn">Удалить</button>
                                 </form>
                             </div>
