@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layouts.app')
 @section('content')
     <div class="container">
         <p class="text-center fs-1 " style="color:rgb(241, 173, 218);">Загрузка трека</p>

@@ -10,7 +10,8 @@ class MainController extends Controller
 {
     public function index(Request $request)
     {
-        $musics = Music::all();
+        $musics = Music::paginate(5);
+
         return view("index", ['musics' => $musics]);
     }
     public function about()

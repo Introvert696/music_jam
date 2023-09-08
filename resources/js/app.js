@@ -1,6 +1,6 @@
 import './bootstrap';
 
-let musics = document.getElementsByTagName("th");
+let musics = document.getElementsByClassName("title");
 let player = document.getElementById("musicplayer");
 let progressline = document.getElementsByClassName("progressline")[0];
 let musictitle = document.getElementById("music-title");
@@ -18,13 +18,13 @@ player.addEventListener("timeupdate",()=>{
 player.addEventListener("ended",()=>{
     console.log("end");
     if(currentTrackNumber+1<musics.length){
-        player.src = "music/"+musics[currentTrackNumber+1].innerHTML;
+        player.src = "/music/"+musics[currentTrackNumber+1].innerHTML;
         musictitle.innerText = musics[currentTrackNumber+1].innerHTML;
         currentTrackNumber+=1;
     } else{
         currentTrackNumber = 0;
         musictitle.innerText = musics[currentTrackNumber].innerHTML;
-        player.src = "music/"+musics[currentTrackNumber].innerHTML;
+        player.src = "/music/"+musics[currentTrackNumber].innerHTML;
     }
 });
 
@@ -33,7 +33,8 @@ function load(){
         console.log(musics[i].innerHTML);
         musics[i].addEventListener("click",(el)=>{
             //console.log(el.target.innerHTML);
-            player.src = "music/"+el.target.innerHTML;
+            player.src = "";
+            player.src = "/music/"+el.target.innerHTML;
             musictitle.innerText = el.target.innerHTML;
             currentTrackNumber = i;
         });

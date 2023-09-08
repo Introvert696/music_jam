@@ -1,0 +1,43 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+
+
+.progressbar{
+    width: 90%;
+    height: 50px;
+    border:1px rgb(241, 173, 218) solid;
+    margin:auto;
+}
+.progressline{
+    width:  0%;
+    height: 50px;
+    background-color: rgb(241, 173, 218);
+}
+#music-title{
+    color:rgb(226, 132, 195);
+    font-weight: 800;
+}
+.player-controll-btns{
+    /* border:1px red solid; */
+    display: flex;
+    margin-top: 15px;
+}
+.control-btn{
+    margin:auto;
+    padding:15px;
+    color: rgb(226, 132, 195);
+    border:1px rgb(241, 173, 218) solid;
+    font-weight: 800;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.music-list tr th{
+    color:rgb(226, 132, 195);
+}

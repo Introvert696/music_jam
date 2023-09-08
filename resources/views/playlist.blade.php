@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <p class="text-center  fs-1  " style="color:rgb(241, 173, 218);">Добро пожаловать в Music_jam</p>
+        <p class="text-center  fs-1  " style="color:rgb(241, 173, 218);">{{ $playlist['title'] }}</p>
     </div>
     <div class="container">
         <audio controls class="m-auto" id="musicplayer" autoplay hidden>
@@ -34,7 +34,7 @@
                                 <form action="{{ route('musicplaylist.store') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" name="music_id" value="{{ $item['id'] }}">
-                                    <button type="submit" class="btn">Добавить</button>
+                                    <button type="submit" class="btn">Удалить</button>
                                 </form>
                             </div>
                         @endauth
@@ -42,6 +42,5 @@
                 </tr>
             @endforeach
         </table>
-        {{ $musics->links() }}
     </div>
 @endsection
