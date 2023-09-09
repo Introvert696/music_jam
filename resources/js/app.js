@@ -30,7 +30,7 @@ player.addEventListener("ended",()=>{
 
 function load(){
     for(let i =0;i<musics.length;i++){
-        console.log(musics[i].innerHTML);
+        //console.log(musics[i].innerHTML);
         musics[i].addEventListener("click",(el)=>{
             //console.log(el.target.innerHTML);
             player.src = "";
@@ -62,14 +62,29 @@ document.getElementById("prewios").addEventListener("click",()=>{
     }
     });
     
-    document.getElementById("next").addEventListener("click",()=>{
-        if(currentTrackNumber+1<musics.length){
-            player.src = "music/"+musics[currentTrackNumber+1].innerHTML;
-            musictitle.innerText = musics[currentTrackNumber+1].innerHTML;
-            currentTrackNumber+=1;
-        } else{
-            currentTrackNumber = 0;
-            musictitle.innerText = musics[currentTrackNumber].innerHTML;
-            player.src = "music/"+musics[currentTrackNumber].innerHTML;
-        }
-        });
+document.getElementById("next").addEventListener("click",()=>{
+    if(currentTrackNumber+1<musics.length){
+        player.src = "music/"+musics[currentTrackNumber+1].innerHTML;
+        musictitle.innerText = musics[currentTrackNumber+1].innerHTML;
+        currentTrackNumber+=1;
+    } else{
+        currentTrackNumber = 0;
+        musictitle.innerText = musics[currentTrackNumber].innerHTML;
+        player.src = "music/"+musics[currentTrackNumber].innerHTML;
+    }
+    });
+
+document.getElementsByClassName("player-controll-volume")[0].addEventListener("click",(el)=>{
+    //console.log(el.offsetX/400);
+    document.getElementsByClassName("progress-volume")[0].style.width=el.offsetX+"px";
+    player.volume=el.offsetX/400;
+});
+document.getElementsByClassName("progressbar")[0].addEventListener("click",(el)=>{
+
+    var offsetX = el.offsetX;
+    var progressBarWidth = el.target.offsetWidth;
+    
+    var percent = offsetX / progressBarWidth;
+    
+    player.currentTime = percent * player.duration;
+})

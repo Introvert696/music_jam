@@ -41,3 +41,15 @@
 .music-list tr th{
     color:rgb(226, 132, 195);
 }
+.player-controll-volume{
+    margin:auto;
+    margin-top:15px;
+    height: 40px;
+    width: 400px;
+    border:1px rgb(241, 173, 218) solid;
+    .progress-volume{
+        width: 400px;
+        height: 100%;
+        background-color:rgb(241, 173, 218);
+    }
+}

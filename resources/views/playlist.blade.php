@@ -20,6 +20,12 @@
                 <div class="control-btn" id="pausebtn">PAUSE</div>
                 <div class="control-btn" id="next">NEXT</div>
             </div>
+            <p class="text-center fs-5" style="color:rgb(241, 173, 218);">Громкость</p>
+            <div class="player-controll-volume">
+                <div class="progress-volume">
+
+                </div>
+            </div>
         </div>
     </div>
 
